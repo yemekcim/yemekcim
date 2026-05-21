@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "User's fitness profile and calculated nutrition goals.",
+      "type": "object",
+      "properties": {
+        "age": { "type": "number", "description": "User's age" },
+        "gender": { "type": "string", "enum": ["male", "female"], "description": "User's gender" },
+        "height": { "type": "number", "description": "Height in cm" },
+        "weight": { "type": "number", "description": "Current weight in kg" },
+        "targetWeight": { "type": "number", "description": "Target weight in kg" },
+        "activityLevel": { "type": "string", "enum": ["sedentary", "light", "moderate", "active", "very_active"] },
+        "manualCalories": { "type": "number" },
+        "bmi": { "type": "number" },
+        "bmiCategory": { "type": "string" },
+        "tdee": { "type": "number" },
+        "targets": {
+          "type": "object",
+          "properties": {
+            "calories": { "type": "number" },
+            "protein": { "type": "number" },
+            "carbs": { "type": "number" },
+            "fats": { "type": "number" },
+            "fiber": { "type": "number" }
+          }
+        },
+        "createdAt": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["age", "gender", "height", "weight", "targetWeight", "activityLevel", "bmi", "bmiCategory", "tdee", "targets", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Stores user fitness profile"
+    }
+  }
+}

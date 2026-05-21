@@ -1,0 +1,8 @@
+{
+  "name": "Yemekçim",
+  "description": "Yemek fotoğraflarını analiz eden, kalori hesaplayan, tarifler sunan ve kişiselleştirilmiş fitness planları hazırlayan sanal şef ve antrenör.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
